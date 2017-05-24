@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Leaflet Awesome 标记</title>
+		
+		<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css">
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="http://watson.lennardvoogdt.nl/Leaflet.awesome-markers/dist/leaflet.awesome-markers.css">
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ==" crossorigin=""/>
+   		
+		<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js" integrity="sha512-A7vV8IFfih/D732iSSKi20u/ooOfj/AGehOKq0f4vLT1Zr2Y+RX7C+w8A1gaSasGtRUZpF/NZgzSAu4/Gc41Lg==" crossorigin=""></script>
+		<script src="http://watson.lennardvoogdt.nl/Leaflet.awesome-markers/dist/leaflet.awesome-markers.js"></script>
+	</head>
+	<body>
+		<div id="map" style="width: 800px; height: 500px;"></div>
+		
+		<script>
+			// 创建地图
+			var map = L.map('map').setView([51.932994,4.509373], 14);
+
+			// 创建瓦片图层
+			L.tileLayer('http://{s}.tile.cloudmade.com/{key}/22677/256/{z}/{x}/{y}.png', {
+  				attribution: 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 CloudMade. Font Awesome by Dave Gandy',
+  				key: 'BC9A493B41014CAABB98F0471D759707',
+  				detectRetina: true
+			}).addTo(map);
+
+			// 向地图添加标记
+			// Font-Awesome 标记
+			L.marker([51.941196,4.512291], {
+				icon: L.AwesomeMarkers.icon({
+					icon: 'spinner', 
+					markerColor: 'red', 
+					prefix: 'fa', 
+					spin:true
+				})
+			}).addTo(map);
+			
+			L.marker([51.927913,4.521303], {
+				icon: L.AwesomeMarkers.icon({
+					icon: 'coffee', 
+					markerColor: 'orange', 
+					prefix: 'fa', 
+					iconColor: 'black'
+				}) 
+			}).addTo(map);
+			
+			L.marker([51.936063,4.502077], {
+				icon: L.AwesomeMarkers.icon({
+					icon: 'cog',  
+					prefix: 'fa', 
+					markerColor: 'purple', 
+					iconColor: '#6b1d5c' 
+				}) 
+			}).addTo(map);
+
+			// Glyphicons
+			L.marker([51.932835,4.506969], {
+				icon: L.AwesomeMarkers.icon({
+					icon: 'star',  
+					prefix: 'glyphicon',
+					markerColor: 'green'
+				}) 
+			}).addTo(map);
+			
+			L.marker([51.930295,4.515209], {
+				icon: L.AwesomeMarkers.icon({
+					icon: 'certificate', 
+					prefix: 'glyphicon', 
+					markerColor: 'blue'
+				}) 
+			}).addTo(map);
+			
+			L.marker([51.930083,4.507742], {
+				icon: L.AwesomeMarkers.icon({
+					icon: 'cog',  
+					prefix: 'glyphicon', 
+					markerColor: 'cadetblue'
+				}) 
+			}).addTo(map);
+		</script>
+	</body>
+</html>
